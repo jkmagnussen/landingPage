@@ -1,31 +1,61 @@
 body {
-    background-color: rgb(65, 66, 66);
+
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 main {
-    flex: 2;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(139, 41, 41);
+    height: 80vh;
 }
 
+.section1 {
+    border: solid rgb(255, 255, 255);
+    position: absolute;
+    width: 50vw;
+    height: 35vh;
+    left: 10px;
+    bottom: 400px;
+}
+.button {
+    background-color: rgb(59, 109, 76); /* Green */
+    border: solid rgb(25, 185, 78);
+    color: rgb(255, 255, 255);
+    padding: 10px 32px;
+    margin: 20px;
+    margin-left: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 15px 15px 15px 15px;
+  }
+  
+.section2 {
+    width: 44vw;
+    height: 45vh;
+    position: absolute;
+    left: 540px;
+    top: 10px;
+}
+.text {
+    font-size: 30px;
+    font-family: Sans-Serif;
+    color: rgb(255, 255, 255);
+    
+}
 section {
     max-width: 800px;
-    margin: 50px auto;
-}
-
-h3, h4, footer {
-    color: rgb(29, 182, 67);
-    padding: 10px;
-    font-size: 28px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 h1 {
-    color: rgb(29, 182, 67);
+    color: rgb(255, 255, 255);
     padding: 10px;
     font-size: 58px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Sans-Serif;
     text-align: center;
 
 }
