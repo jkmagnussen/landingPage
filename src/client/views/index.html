@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                <img src = '/src/client/views/aylien.png' alt="Smiley face" height="120px;" width="300px;" >
+            </div>
+            <div class="">
+                <img src = '/src/client/views/node.png' alt="Smiley face" height="120px;" width="250px;" >
+            </div>
+        </header>
+        <br><br><br>
+        <h1>News Article Evaluator <br>Through Natural Language Processing
+        </h1>
+<br>
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="url" name="test-url" value=""  placeholder="https://www.news-source/a-news-article...">
+                    <input id ="sub" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+                <p id ="error-message"></p>
+            <section>
+
+            <section class="url-results">
+                    <ul>
+                        <li>
+                            <h3>Text Polarity:</h3>
+                            <p id="polarity"></p>
+                            <h4>Polarity Confidence: </h4>
+                            <p id="polarity_confidence"></p>
+                        </li>
+    
+                        <li>
+                            <h3>Text Subjectivity:</h3>
+                            <p id="subjectivity"></p>
+                            <h4>Subjectivity Confidence: </h4>
+                            <p id="subjectivity_confidence"></p>
+                        </li>
+    
+                        <h3>Text Excerpt:</h3>
+                        <p id="excerpt"></p>
+                    </ul>
+                </section>
+        </main>
+
+        <footer role="contentinfo">
+            Copyright © 2019, JKMagnussen. All Rights Reserved | 
+        <a href='http://www.linkedin.com/in/joseph-magnussen-478827189'><span style='color: rgb(255, 253, 253);'>LinkedIn</span></a> 
+        | <a href='https://github.com/jkmagnussen'><span style='color: rgb(255, 253, 253);'>Github </span></a>
+        | <a href='https://jkmagnussen.com'><span style='color: rgb(255, 255, 255);'>Homepage </span></a>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+
+    </body>
+</html>
