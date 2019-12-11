@@ -14,11 +14,11 @@ main {
 
 .section1 {
     border: solid rgb(255, 255, 255);
-    position: absolute;
+    position: fixed;
     width: 50vw;
     height: 35vh;
     left: 10px;
-    bottom: 400px;
+    top: 380px;
 }
 .button {
     background-color: rgb(59, 109, 76); /* Green */
@@ -37,9 +37,9 @@ main {
 .section2 {
     width: 44vw;
     height: 45vh;
-    position: absolute;
+    position: fixed;
     left: 540px;
-    top: 10px;
+    top: 380px;
 }
 .text {
     font-size: 30px;
@@ -47,6 +47,7 @@ main {
     color: rgb(255, 255, 255);
     
 }
+
 section {
     max-width: 800px;
 }
