@@ -1,3 +1,13 @@
+
+export { handleSubmit }
+const fetchURL = "http://localhost:8081/get-latest";
+const saveURL = "http://localhost:8081/save";
+
+var apikey = ({
+  application_id: process.env.API_ID,
+  application_key: process.env.API_KEY
+  });
+
 var validUrl = require('valid-url')
 function handleSubmit(event) {
     event.preventDefault()
@@ -8,17 +18,6 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
     //fetch('http://localhost:8081/save')
-    //.then(res => res.json())
-    //.then(function(res) {
-        //document.getElementById('results').innerHTML = res.message
-    //})
-    let formText = document.getElementById('name').value
-    if (validUrl.isUri(formText)){
-      _postData('http://localhost:8081/article', formText)
-    } else {
-      document.getElementById('error-message').innerHTML = "Sorry, this is not a valid URL."
-    }
-}
 
 const _postData = async (path, input_url) => {
     await fetch(path, {
@@ -39,12 +38,8 @@ const _postData = async (path, input_url) => {
 
           console.log(res);
 
-          document.getElementById('polarity').innerHTML = JSON.stringify(res.polarity);
-          document.getElementById('subjectivity').innerHTML = JSON.stringify(res.subjectivity);
-          document.getElementById('polarity_confidence').innerHTML = JSON.stringify(res.polarity_confidence);
-          document.getElementById('subjectivity_confidence').innerHTML = JSON.stringify(res.subjectivity_confidence);
-          document.getElementById('excerpt').innerHTML = JSON.stringify(res.text);
+          document.getElementById('latitude').innerHTML = JSON.stringify(res.latitude);
+          document.getElementById('longitude').innerHTML = JSON.stringify(res.longitude);
+          document.getElementById('country').innerHTML = JSON.stringify(res.country);
   }
-)}
-
-export { handleSubmit }
+)}}
