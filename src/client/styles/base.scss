@@ -12,18 +12,10 @@ main {
     height: 80vh;
 }
 
-.section1 {
-    border: solid rgb(255, 255, 255);
-    position: fixed;
-    width: 50vw;
-    height: 35vh;
-    left: 10px;
-    top: 380px;
-}
 
 .button {
     background-color: rgb(59, 109, 76); /* Green */
-    border: solid rgb(25, 185, 78);
+    border: solid rgb(246, 248, 114);
     color: rgb(255, 255, 255);
     padding: 10px 32px;
     margin: 20px;
@@ -36,11 +28,18 @@ main {
   }
   
 .section2 {
-    width: 44vw;
+    font-family: Sans-Serif;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    width: 68vw;
     height: 45vh;
-    position: fixed;
-    left: 540px;
-    top: 380px;
+    position: relative;
+    left: 140px;
+    top: 50px;
+}
+
+div {
+    padding:10px;
 }
 .text {
     font-size: 30px;

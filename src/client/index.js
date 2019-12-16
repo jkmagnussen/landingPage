@@ -1,6 +1,6 @@
 
 import { checkForName } from './js/nameChecker'
-import { handleSubmit } from './js/formHandler'
+import { handleGeonames } from './js/formHandler'
 import { buttonHandler } from './js/buttonHandler'
 
 
@@ -12,9 +12,6 @@ import './styles/header.scss'
 
 export {
     checkForName,
-    handleSubmit,
+    handleGeonames,
     buttonHandler 
 }
-
-alert("I EXIST")
-console.log("CHANGE!!");

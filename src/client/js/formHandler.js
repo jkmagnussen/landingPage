@@ -1,25 +1,32 @@
-export { handleSubmit }
+
+
 const fetchURL = "http://localhost:8081/get-latest";
 const saveURL = "http://localhost:8081/save";
-
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
 var userid = ({
   username: process.env.username
   });
 var validUrl = require('valid-url')
-function handleSubmit(event) {
-    event.preventDefault()
+function handleGeonames(event) {
+  const prospectiveLocation = document.getElementById('input1');
+  const startingLocation = document.getElementById('input2')
+  //event.preventDefault()
 
-    // check what text was put into the form field
-    //Client.checkForName(formText)
-    //var input_url = document.querySelectorAll('input[name=test-url]');
-    console.log("::: Form Submitted :::")
-    //fetch('http://localhost:8081/save')
-    const _fetchWeatherData = async (userid, zip = "11230") => {
-      // we build our data necessary for doing the fetch operation from weather api
-      const url = `http://${GeoNames}postalcode=${zip}&maxRows=10&username=${userid}`;
-      return await response.json();
-    };
+  console.log("::: Form Submitted :::")
+  const _fetchGeoNames = async (zip = "11230") => {
+
+    const url = `http://localhost:8081/geoNames?zip=${zip}`;
+    return await fetch(url)
+    .then(response => response.json())
+  };
+  _fetchGeoNames(prospectiveLocation.value).then(response =>{
+    document.getElementById('latitude').innerHTML = response.lat;
+    document.getElementById('longitude').innerHTML = response.lng;
+    document.getElementById('country').innerHTML = response.countryCode;
+  });
+
+   _fetchGeoNames(startingLocation.value)
+};
 
 const _postData = async (path, input_url) => {
     await fetch(path, {
@@ -45,5 +52,7 @@ const _postData = async (path, input_url) => {
           document.getElementById('latitude').innerHTML = JSON.stringify(res.latitude);
           document.getElementById('longitude').innerHTML = JSON.stringify(res.longitude);
           document.getElementById('country').innerHTML = JSON.stringify(res.country);
-  }
-)}}
+  });
+};
+
+export { handleGeonames}

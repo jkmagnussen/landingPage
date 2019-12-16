@@ -13,18 +13,18 @@
 
 <br>
         <main>
-            <section class ="section1">
-                <span class = "box"></span>
-            </section>
             <section class ="section2">
-                    <p class = "text">My trip to: </p><input id="input1" placeholder="Input your  prospective location" type="text"><br>
-                    <p class = "text">Departing: </p><input id="input2" placeholder="Input your  starting location" type="text"><br>
-                    <button class = "button" type="button">Save Trip</button> <button class = "button"type="button">Remove Trip</button>
+                    <p class = "text" style = 'font-size: 50px;'>Your Trip To: </p><input id="input1" placeholder="Zipcode/ Postcode or City" type="text"><br>
+                    <p class = "text" style = 'font-size: 50px;'>Departing: </p><input id="input2" placeholder="Input Your Departure Date" type="text"><br>
+                    <button class = "button" onClick = "Client.handleGeonames()" type="button">Submit</button> <button class = "button"type="button">Remove Trip</button>
                     <br>         
-                    <p class = "text">Resuts: </p>
-                    <div id="latitude"></div>
-                    <div id="longitude"></div>
-                    <div id="country"></div>
+
+                    <p>Latitude:<div id="latitude" style = 'color: rgb(180, 178, 30)';></div></p>
+                    <p>Longitude:<div id="longitude" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Country:<div id="country" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Countdown<div id="countdown"></div></p>
+                    <p>Weather:<div id="Weather"></div></p>
+                    <p>Picture:<div id="picture"></div></p>
             </section>
         </main>
 

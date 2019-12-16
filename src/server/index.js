@@ -2,13 +2,12 @@ const dotenv = require('dotenv');
 dotenv.config();
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const aylien = require('aylien_textapi')
 const postRequest = ('./handle')
-
+const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
+const axios = require('axios');
 
 app.use(cors())
 app.use(express.static('dist'))
@@ -19,9 +18,7 @@ app.use(bodyParser.urlencoded({
 );
 app.use(bodyParser.json())
 console.log(__dirname);
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-})
+
 app.get('/save', function (req, res) {
   res.send(JSON.stringify(projectData));
 })
@@ -30,19 +27,27 @@ app.get('/save', function (req, res) {
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 });
-
-var textapi = new aylien({
-  application_id: process.env.API_ID,
-  application_key: process.env.API_KEY
-  });
-
-  console.log(process.env)
 // Post Route
-app.post("/save", (req, res) => {
-  projectData.latitude = req.body.latitude;
-  projectData.longitude = req.body.longitude;
-  projectData.country = req.body.country;
-  res.end();
-});
+app.get("/geoNames", (req, res) => {
+  const zip = req.query.zip;
+   _fetchGeoNames(process.env.username, zip)
+   .then(response=>{
+     res.end(JSON.stringify(response))
+   });
+}
+)
+
+const _fetchGeoNames = async (username, zip = "11230") => { 
+
+  // we build our data necessary for doing the fetch operation from weather api
+
+  const url = `http://${GeoNames}postalcode=${zip}&maxRows=10&username=${username}`;
+  return axios.get(url)
+  .then(response => 
+    response.data.postalCodes[0]
+  )
+};
 
 module.exports = app;
+
+//response.json())
