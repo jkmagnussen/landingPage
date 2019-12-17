@@ -8,7 +8,8 @@ var userid = ({
 
 function handleGeonames(event) {
   const prospectiveLocation = document.getElementById('input1');
-  const startingLocation = document.getElementById('input2')
+  const chosenDate = document.getElementById('input2').value;
+  const endDate = document.getElementById('input3').value;
   //event.preventDefault()
   console.log("::: Form Submitted :::")
   const _fetchGeoNames = async (zip = "11230") => {
@@ -21,7 +22,17 @@ function handleGeonames(event) {
     document.getElementById('longitude').innerHTML = response.lng;
     document.getElementById('country').innerHTML = response.countryCode;
   });
-   _fetchGeoNames(startingLocation.value)
+   _fetchGeoNames(prospectiveLocation.value);
+   
+   const time = new Date().getTime()
+   const newTime = new Date(chosenDate).getTime();
+   const addTime = new Date(endDate).getTime();
+   
+   const countdown = newTime - time
+   const LoT = addTime - newTime
+
+   const deadline = document.getElementById('countdown').innerHTML = countdown + ' milliseconds';
+   const tripDuration = document.getElementById('LoT').innerHTML = LoT + ' milliseconds';
 };
 
 const _postData = async (path, input_url) => {

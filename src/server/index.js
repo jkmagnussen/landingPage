@@ -9,6 +9,7 @@ const postRequest = ('./handle')
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
 const axios = require('axios');
 
+
 app.use(cors())
 app.use(express.static('dist'))
 let projectData = {};
