@@ -10,8 +10,13 @@ main {
     flex-direction: row;
     background-color: rgb(139, 41, 41);
     height: 80vh;
+    overflow-y: auto;
 }
 
+.image {
+    border: solid white;
+    width: 30px;
+}
 
 .button {
     background-color: rgb(59, 109, 76); /* Green */
@@ -70,6 +75,7 @@ footer {
     font-size: 24px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    height: 6vh;
 
 
 }

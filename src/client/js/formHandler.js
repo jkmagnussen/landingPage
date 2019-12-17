@@ -1,20 +1,17 @@
-
-
 const fetchURL = "http://localhost:8081/get-latest";
 const saveURL = "http://localhost:8081/save";
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
+var validUrl = require('valid-url')
 var userid = ({
   username: process.env.username
   });
-var validUrl = require('valid-url')
+
 function handleGeonames(event) {
   const prospectiveLocation = document.getElementById('input1');
   const startingLocation = document.getElementById('input2')
   //event.preventDefault()
-
   console.log("::: Form Submitted :::")
   const _fetchGeoNames = async (zip = "11230") => {
-
     const url = `http://localhost:8081/geoNames?zip=${zip}`;
     return await fetch(url)
     .then(response => response.json())
@@ -24,7 +21,6 @@ function handleGeonames(event) {
     document.getElementById('longitude').innerHTML = response.lng;
     document.getElementById('country').innerHTML = response.countryCode;
   });
-
    _fetchGeoNames(startingLocation.value)
 };
 
@@ -44,15 +40,11 @@ const _postData = async (path, input_url) => {
           return res.json()
         })
         .then(function(res) {
-
           console.log(res);
-
           const zip = document.getElementById('input1');
-
           document.getElementById('latitude').innerHTML = JSON.stringify(res.latitude);
           document.getElementById('longitude').innerHTML = JSON.stringify(res.longitude);
           document.getElementById('country').innerHTML = JSON.stringify(res.country);
   });
 };
-
 export { handleGeonames}
