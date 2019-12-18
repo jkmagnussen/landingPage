@@ -8,8 +8,7 @@ main {
     display: flex;
     flex-direction: row;
     background-color: rgb(139, 41, 41);
-    height: 80vh;
-    overflow-y: auto;
+    height: 151vh;
     padding: 100px;
     padding-top: 20px;
 }
@@ -33,6 +32,7 @@ main {
     font-size: 35px;
     color: rgb(255, 255, 255);
     width: 100vw;
+    height: 80vh;
     position: relative;
     align-content: center;
 }
