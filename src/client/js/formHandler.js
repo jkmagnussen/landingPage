@@ -1,10 +1,6 @@
 const fetchURL = "http://localhost:8081/get-latest";
 const saveURL = "http://localhost:8081/save";
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
-var validUrl = require('valid-url')
-var userid = ({
-  username: process.env.username
-  });
 
 function handleGeonames(event) {
   const prospectiveLocation = document.getElementById('input1');
@@ -18,23 +14,20 @@ function handleGeonames(event) {
     .then(response => response.json())
   };
   _fetchGeoNames(prospectiveLocation.value).then(response =>{
-    document.getElementById('latitude').innerHTML = response.lat;
-    document.getElementById('longitude').innerHTML = response.lng;
-    document.getElementById('country').innerHTML = response.countryCode;
+    document.getElementById('latitude').textContent = response.lat;
+    document.getElementById('longitude').textContent = response.lng;
+    document.getElementById('country').textContent = response.countryCode;
   });
    _fetchGeoNames(prospectiveLocation.value);
    
-   const time = new Date().getTime()
+   const time = new Date().getTime();
    const newTime = new Date(chosenDate).getTime();
    const addTime = new Date(endDate).getTime();
-   
-   const countdown = newTime - time
-   const LoT = addTime - newTime
-
-   const deadline = document.getElementById('countdown').innerHTML = countdown + ' milliseconds';
-   const tripDuration = document.getElementById('LoT').innerHTML = LoT + ' milliseconds';
+   const countdown = newTime - time;
+   const LoT = addTime - newTime;
+   const deadline = document.getElementById('countdown').textContent = countdown + ' milliseconds';
+   const tripDuration = document.getElementById('LoT').textContent = LoT + ' milliseconds';
 };
-
 const _postData = async (path, input_url) => {
     await fetch(path, {
       method: "POST",
@@ -52,10 +45,9 @@ const _postData = async (path, input_url) => {
         })
         .then(function(res) {
           console.log(res);
-          const zip = document.getElementById('input1');
-          document.getElementById('latitude').innerHTML = JSON.stringify(res.latitude);
-          document.getElementById('longitude').innerHTML = JSON.stringify(res.longitude);
-          document.getElementById('country').innerHTML = JSON.stringify(res.country);
+          document.getElementById('latitude').textContent = JSON.stringify(res.latitude);
+          document.getElementById('longitude').textContent = JSON.stringify(res.longitude);
+          document.getElementById('country').textContent = JSON.stringify(res.country);
   });
 };
 export { handleGeonames}
