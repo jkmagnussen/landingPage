@@ -25,9 +25,14 @@ function handleGeonames(event) {
    const addTime = new Date(endDate).getTime();
    const countdown = newTime - time;
    const LoT = addTime - newTime;
-   const deadline = document.getElementById('countdown').textContent = countdown + ' milliseconds';
-   const tripDuration = document.getElementById('LoT').textContent = LoT + ' milliseconds';
+
+   const deadline = document.getElementById('countdown').textContent = countdown / 8.64e+7
+   + ' Days to go!';
+   const tripDuration = document.getElementById('LoT').textContent =  LoT / 8.64e+7 + ' Day trip.';
+
 };
+
+
 const _postData = async (path, input_url) => {
     await fetch(path, {
       method: "POST",
