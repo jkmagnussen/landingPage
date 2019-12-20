@@ -22,7 +22,7 @@ function handleGeonames(event) {
    const addTime = new Date(endDate).getTime();
    const countdown = newTime - time;
    const LoT = addTime - newTime;
-   const deadline = document.getElementById('countdown').textContent = countdown / 8.64e+7 + ' Days to go!';
+   const deadline = document.getElementById('countdown').textContent = Math.ceil(countdown / 8.64e+7) + ' Days to go!';
    const tripDuration = document.getElementById('LoT').textContent =  LoT / 8.64e+7 + ' Day trip.';
 };
 
@@ -36,4 +36,4 @@ const _fetchDarkSky = async (lat, long) => {
 };
 
 export { handleGeonames}
-export { _fetchDarkSky}
+export { _fetchDarkSky} 
