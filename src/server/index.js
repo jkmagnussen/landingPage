@@ -6,6 +6,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const postRequest = ('./handle')
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
+const darkSky = 'api.darksky.net/forecast';
 const axios = require('axios');
 app.use(bodyParser.json())
 app.use(cors())
@@ -28,7 +29,7 @@ const _fetchGeoNames = async (username, zip = "11230") => {
   )
 };
 
-// Post Route
+// geoNamesRoute
 app.get("/geoNames", (req, res) => {
   const zip = req.query.zip;
    _fetchGeoNames(process.env.username, zip)
@@ -36,4 +37,23 @@ app.get("/geoNames", (req, res) => {
      res.end(JSON.stringify(response))
    });
 })
+
+// function to aggrogate the Dark Sky route, api key and url with longitude/ latitude search 
+const _darkSky = async (secret, latitude, longitude) => { 
+  // we build our data necessary for doing the fetch operation from weather api
+  const url = `https://${darkSky}/${secret}/${latitude}/${longitude}`;
+  return axios.get(url)
+  .then(response => 
+    response.data.daily[0]
+  )
+};
+
+app.get("/darkSky", (req, res) => {
+  const weather = req.query.latitude.longitude ;
+  _darkSky(process.env.secret, weather)
+   .then(response=>{
+     res.end(JSON.stringify(response))
+   });
+})
+
 module.exports = app;

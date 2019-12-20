@@ -1,13 +1,10 @@
-const fetchURL = "http://localhost:8081/get-latest";
-const saveURL = "http://localhost:8081/save";
-const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
 
 function handleGeonames(event) {
   const prospectiveLocation = document.getElementById('input1');
   const chosenDate = document.getElementById('input2').value;
   const endDate = document.getElementById('input3').value;
-  //event.preventDefault()
   console.log("::: Form Submitted :::")
+  
   const _fetchGeoNames = async (zip = "11230") => {
     const url = `http://localhost:8081/geoNames?zip=${zip}`;
     return await fetch(url)
@@ -25,34 +22,18 @@ function handleGeonames(event) {
    const addTime = new Date(endDate).getTime();
    const countdown = newTime - time;
    const LoT = addTime - newTime;
-
-   const deadline = document.getElementById('countdown').textContent = countdown / 8.64e+7
-   + ' Days to go!';
+   const deadline = document.getElementById('countdown').textContent = countdown / 8.64e+7 + ' Days to go!';
    const tripDuration = document.getElementById('LoT').textContent =  LoT / 8.64e+7 + ' Day trip.';
-
 };
 
-
-const _postData = async (path, input_url) => {
-    await fetch(path, {
-      method: "POST",
-      cache: "no-cache", 
-      credentials: "same-origin",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      redirect: "follow",
-      body: JSON.stringify({text: input_url})
-        })
-        .then(res => {
-          console.log(res)
-          return res.json()
-        })
-        .then(function(res) {
-          console.log(res);
-          document.getElementById('latitude').textContent = JSON.stringify(res.latitude);
-          document.getElementById('longitude').textContent = JSON.stringify(res.longitude);
-          document.getElementById('country').textContent = JSON.stringify(res.country);
-  });
+const _fetchDarkSky = async (lat, long) => {
+  const lat1 = document.getElementById('latitude').textContent;
+  const long1 = document.getElementById('longitude').textContent;
+  const url = `http://localhost:8081/darkSky/${lat}/${long}`;
+  return await fetch(url)
+  .then(response => response.json())
+  .then (document.getElementById('weather').textContent = response.daily);
 };
+
 export { handleGeonames}
+export { _fetchDarkSky}
