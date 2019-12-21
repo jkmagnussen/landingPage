@@ -19,6 +19,7 @@
     "aylien_textapi": "^0.7.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dark-sky": "^1.1.5",
     "express": "^4.17.1",
     "ms-convert": "^1.0.1",
     "request": "^2.88.0",

@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 });
-
 // function to aggrogate the geoNames route, api key and url with zip search 
 const _fetchGeoNames = async (username, zip = "11230") => { 
   // we build our data necessary for doing the fetch operation from weather api
@@ -39,19 +38,26 @@ app.get("/geoNames", (req, res) => {
 })
 
 // function to aggrogate the Dark Sky route, api key and url with longitude/ latitude search 
-const _darkSky = async (secret, latitude, longitude) => { 
+const _darkSky = async (key, lat, long, time) => {
   // we build our data necessary for doing the fetch operation from weather api
-  const url = `https://${darkSky}/${secret}/${latitude}/${longitude}`;
-  return axios.get(url)
-  .then(response => 
-    response.data.daily[0]
-  )
+  const url = `https://${darkSky}/${key}/${lat},${long},${time}`;
+  console.log(url);
+
+  return await axios.get(url)
+  .then(response => {
+    return response.data.daily.data[0];
+  });
 };
 
+// darkSky Route
 app.get("/darkSky", (req, res) => {
-  const weather = req.query.latitude.longitude ;
-  _darkSky(process.env.secret, weather)
-   .then(response=>{
+
+  const time = req.query.time;
+  const lat = req.query.latitude;
+  const long = req.query.longitude;
+
+  _darkSky(process.env.key, lat, long, time)
+   .then(response => {
      res.end(JSON.stringify(response))
    });
 })

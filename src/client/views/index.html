@@ -13,19 +13,32 @@
 <br>
         <main>
             <section class ="section2">
-                    <p class = "text" style = 'font-size: 50px;'>Your Trip To: </p><input id="input1" placeholder="Please enter a valid zipcode/ postcode or city" type="text"><br>
-                    <p class = "text" style = 'font-size: 50px;'>Start Date: </p><input id="input2" placeholder="Input Your Departure Date" type="date">
-                    <p class = "text" style = 'font-size: 50px;'>End Date: </p><input id="input3" placeholder="Input Your Return Date" type="date">
-                    <button class = "button" onClick = "Client.handleGeonames()" type="button">Submit</button> <button class = "button"type="button">Remove Trip</button>
+                    <p class = "text" style = 'font-size: 50px;'>Your Trip To: </p>
+                    <input id="input1"
+                           placeholder="Please enter a valid zipcode/ postcode or city"
+                           type="text"
+                           value="L378BD"><br>
+
+                    <p class = "text" style = 'font-size: 50px;'>Start Date: </p>
+                    <input id="input2"
+                           placeholder="Input Your Departure Date"
+                           type="date"
+                           value="2019-12-25">
+
+                    <p class = "text" style = 'font-size: 50px;'>End Date: </p>
+                    <input id="input3"
+                           placeholder="Input Your Return Date"
+                           type="date"
+                           value="2019-12-29">
+
+                    <button class = "button" onClick = "Client.formHandler()" type="button">Submit</button> <button class = "button"type="button">Remove Trip</button>
                     <br><br>      
                     <p>Latitude:<div id="latitude" style = 'color: rgb(180, 178, 30)';></div></p>
                     <p>Longitude:<div id="longitude" style = 'color: rgb(180, 178, 30)'></div></p>
-                    <p>Country:<div id="country" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Country Code:<div id="country" style = 'color: rgb(180, 178, 30)'></div></p>
                     <p>Countdown:<div id="countdown" style = 'color: rgb(180, 178, 30)'></div></p>
-                    <p>Prospective Weather:<div id="Weather" style = 'color: rgb(180, 178, 30)'></div></p>
                     <p>Length of Trip:<div id="LoT" style = 'color: rgb(180, 178, 30)'></div></p>
-                    <img id ="img" class = "img" src="src/client/views/293850-nature.jpg" alt="Italian Trulli">
-                    <br><br>
+                    <p>Prospective Weather:<ul id="weather" style = 'color: rgb(180, 178, 30)'></ul></p>
             </section>
         </main>
 
@@ -48,3 +61,4 @@
 
     </body>
 </html>
+

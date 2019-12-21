@@ -1,7 +1,7 @@
 
-import { checkForName } from './js/nameChecker'
-import { handleGeonames } from './js/formHandler'
-import { buttonHandler } from './js/buttonHandler'
+// import { checkForName } from './js/nameChecker'
+import formHandler from './js/formHandler';
+// import { buttonHandler } from './js/buttonHandler'
 
 
 import './styles/resets.scss'
@@ -10,8 +10,4 @@ import './styles/footer.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 
-export {
-    checkForName,
-    handleGeonames,
-    buttonHandler 
-}
+export { formHandler };
