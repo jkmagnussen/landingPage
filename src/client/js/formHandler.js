@@ -21,10 +21,11 @@ const handleCountdown = () => {
   const startDate = new Date(document.getElementById('input2').value);
   const endDate = new Date(document.getElementById('input3').value);
 
-  const time = new Date().getTime();
+  const time = new Date()
   // const newTime = new Date(chosenDate).getTime();
   // const addTime = new Date(endDate).getTime();
-  const countdown = dateDifference(startDate, endDate);
+  const countdown = Math.ceil(startDate - time);
+  
   // const countdown = newTime - time;
   const LoT = endDate.getTime() - startDate.getTime();
   const deadline = document.getElementById('countdown').textContent = Math.ceil(countdown / 8.64e+7) + ' Days to go!';
@@ -48,7 +49,7 @@ const handleDarkSky = (time, daySinceStart) => {
   const lng = document.getElementById('longitude').textContent;
 
   _fetchDarkSky(lat, lng, time).then(response => {
-    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 Highs, ${response.temperatureLow}\u00B0 Lows & likely  ${response.icon}.       `);
+    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ & likely  ${response.icon}.       `);
     const child = document.createElement("li").appendChild(childText);
     document.getElementById('weather').appendChild(child);
   });
