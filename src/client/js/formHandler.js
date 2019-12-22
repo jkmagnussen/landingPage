@@ -37,7 +37,6 @@ const dateDifference = (startDate, endDate) => {
 
 const _fetchDarkSky = async (lat, long, time) => {
   const url2 = `http://localhost:8081/darkSky?latitude=${lat}&longitude=${long}&time=${time}`;
-
   return await fetch(url2)
   .then(response => {
     return response.json()
@@ -49,7 +48,7 @@ const handleDarkSky = (time, daySinceStart) => {
   const lng = document.getElementById('longitude').textContent;
 
   _fetchDarkSky(lat, lng, time).then(response => {
-    const childText = document.createTextNode(`High of day ${daySinceStart + 1}: ${response.temperatureHigh} degrees`);
+    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 Highs, ${response.temperatureLow}\u00B0 Lows & likely  ${response.icon}.       `);
     const child = document.createElement("li").appendChild(childText);
     document.getElementById('weather').appendChild(child);
   });
@@ -66,7 +65,7 @@ const formHandler = (event) => {
 
     for(let i=0; i < countdownInDays; i++) {
       let currentDate = new Date(startDate);
-      currentDate.setDate(startDate.getDate() + i);
+      currentDate.setDate(startDate.getDate());
 
       const time = currentDate.getTime()/1000;
       handleDarkSky(time, i);
