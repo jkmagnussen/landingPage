@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const postRequest = ('./handle')
 const GeoNames = 'api.geonames.org/postalCodeSearchJSON?';
 const darkSky = 'api.darksky.net/forecast';
+const pixabay = 'pixabay.com/api';
 const axios = require('axios');
 app.use(bodyParser.json())
 app.use(cors())
@@ -57,6 +58,28 @@ app.get("/darkSky", (req, res) => {
   const long = req.query.longitude;
 
   _darkSky(process.env.key, lat, long, time)
+   .then(response => {
+     res.end(JSON.stringify(response))
+   });
+})
+
+//Pixabay API
+const _pixabay = async (pixabaykey, image) => {
+  // data necessary for doing the fetch operation from pixabay api
+  const url = `https://${pixabay}/${pixabaykey}/${image}`;
+  console.log(url);
+
+  return await axios.get(url)
+  .then(response => {
+    return response.data[0];
+  });
+};
+
+// darkSky Route
+app.get("/pixabay", (req, res) => {
+  const picture = req.query.image;
+
+  _darkSky(process.env.pixabaykey, picture)
    .then(response => {
      res.end(JSON.stringify(response))
    });

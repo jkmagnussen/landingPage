@@ -49,12 +49,20 @@ const handleDarkSky = (time, daySinceStart) => {
   const lng = document.getElementById('longitude').textContent;
 
   _fetchDarkSky(lat, lng, time).then(response => {
-    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ & likely  ${response.icon}.       `);
+    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ & Likely:  ${response.icon}.`);
     const child = document.createElement("li").appendChild(childText);
     document.getElementById('weather').appendChild(child);
   });
 };
 
+//Pixabay API fetch request
+const _fetchPixabay = async (image) => {
+  const url3 = `http://localhost:8081/pixabay?/${image}`;
+  return await fetch(url3)
+  .then(response => {
+    return response.json()
+  })
+};
 
 const formHandler = (event) => {
   handleCountdown();
@@ -71,6 +79,11 @@ const formHandler = (event) => {
       const time = currentDate.getTime()/1000;
       handleDarkSky(time, i);
     }
+
+    _fetchPixabay().then(response => {
+      const image = document.createElement("img").appendChild(childText);
+      image.src = url3;
+    });
   });
 }
 
