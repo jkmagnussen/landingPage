@@ -1,4 +1,3 @@
-
 const _fetchGeoNames = async (zip = "11230") => {
   const url = `http://localhost:8081/geoNames?zip=${zip}`;
   return await fetch(url)
@@ -49,11 +48,13 @@ const handleDarkSky = (time, daySinceStart) => {
   const lng = document.getElementById('longitude').textContent;
 
   _fetchDarkSky(lat, lng, time).then(response => {
-    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ & Likely:  ${response.icon}.`);
+    const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ ${response.icon}. `);
     const child = document.createElement("li").appendChild(childText);
     document.getElementById('weather').appendChild(child);
   });
 };
+
+
 
 //Pixabay API fetch request
 const _fetchPixabay = async (image) => {
@@ -63,6 +64,7 @@ const _fetchPixabay = async (image) => {
     return response.json()
   })
 };
+
 
 const formHandler = (event) => {
   handleCountdown();

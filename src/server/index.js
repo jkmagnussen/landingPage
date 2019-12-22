@@ -15,10 +15,12 @@ app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
     console.log('Example app listening on port 8081!')
 });
+
 // function to aggrogate the geoNames route, api key and url with zip search 
 const _fetchGeoNames = async (username, zip = "11230") => { 
   // we build our data necessary for doing the fetch operation from weather api
@@ -71,7 +73,7 @@ const _pixabay = async (pixabaykey, image) => {
 
   return await axios.get(url)
   .then(response => {
-    return response.data[0];
+    return response.data.hits.largeImageURL[0];
   });
 };
 
