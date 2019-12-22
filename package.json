@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/server/index.js",
+    "start": "npm run client-prod && npm run server-prod",
     "server-dev": "nodemon src/server/index.js",
-    "build": "webpack",
-    "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "server-prod": "node src/server/index.js",
+    "client-prod": "webpack --config webpack.prod.js",
+    "client-dev": "webpack-dev-server  --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "ms-convert": "^1.0.1",
     "request": "^2.88.0",
+    "supertest": "^4.0.2",
     "valid-url": "^1.0.9",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"

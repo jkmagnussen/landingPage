@@ -8,56 +8,51 @@
     <body>
 
         <header>
-            <div class="">
-                <img src = '/src/client/views/aylien.png' alt="Smiley face" height="120px;" width="300px;" >
-            </div>
-            <div class="">
-                <img src = '/src/client/views/node.png' alt="Smiley face" height="120px;" width="250px;" >
-            </div>
+            <h1>Travel Planner</h1>
         </header>
-        <br><br><br>
-        <h1>News Article Evaluator <br>Through Natural Language Processing
-        </h1>
 <br>
         <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="url" name="test-url" value=""  placeholder="https://www.news-source/a-news-article...">
-                    <input id ="sub" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-                <p id ="error-message"></p>
-            <section>
+            <section class ="section2">
+                    <p class = "text" style = 'font-size: 50px;'>Your Trip To: </p>
+                    <input id="input1"
+                           placeholder="Please enter a valid zipcode/ postcode or city"
+                           type="text">
 
-            <section class="url-results">
-                    <ul>
-                        <li>
-                            <h3>Text Polarity:</h3>
-                            <p id="polarity"></p>
-                            <h4>Polarity Confidence: </h4>
-                            <p id="polarity_confidence"></p>
-                        </li>
-    
-                        <li>
-                            <h3>Text Subjectivity:</h3>
-                            <p id="subjectivity"></p>
-                            <h4>Subjectivity Confidence: </h4>
-                            <p id="subjectivity_confidence"></p>
-                        </li>
-    
-                        <h3>Text Excerpt:</h3>
-                        <p id="excerpt"></p>
-                    </ul>
-                </section>
+                    <p class = "text" style = 'font-size: 50px;'>Start Date: </p>
+                    <input id="input2"
+                           placeholder="Input Your Departure Date"
+                           type="date">
+
+                    <p class = "text" style = 'font-size: 50px;'>End Date: </p>
+                    <input id="input3"
+                           placeholder="Input Your Return Date"
+                           type="date">
+
+                    <button class = "button" onClick = "Client.formHandler()" type="button">Submit</button> 
+                    <button id = "removeTripButton" class = "button" type="button">Remove Trip</button>
+                    <br><br>
+                    <p><div id="latitude" style = 'color: rgb(180, 178, 30); display: none;'></div></p>
+                    <p><div id="longitude" style = 'color: rgb(180, 178, 30); display: none;'></div></p>
+                    <p>Country Code:<div id="country" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Place Name:<div id="placeName" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Countdown:<div id="countdown" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Length of Trip:<div id="LoT" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p>Prospective Weather:<ul id="weather" style = 'color: rgb(180, 178, 30); line-height: 50px; text-align: justify'></ul></p>
+                    <p>Image:<div id="image" style = 'color: rgb(180, 178, 30); line-height: 50px; text-align: justify'></div></p>
+            </section>
         </main>
 
         <footer role="contentinfo">
-            Copyright © 2019, JKMagnussen. All Rights Reserved | 
-        <a href='http://www.linkedin.com/in/joseph-magnussen-478827189'><span style='color: rgb(255, 253, 253);'>LinkedIn</span></a> 
-        | <a href='https://github.com/jkmagnussen'><span style='color: rgb(255, 253, 253);'>Github </span></a>
-        | <a href='https://jkmagnussen.com'><span style='color: rgb(255, 255, 255);'>Homepage </span></a>
+            <pstyle='color: rgb(56, 56, 56); >Copyright © 2019, JKMagnussen. All Rights Reserved | </p>
+        <a href='http://www.linkedin.com/in/joseph-magnussen-478827189'><span style='color: rgb(32, 32, 32);'>LinkedIn</span></a> 
+        | <a href='https://github.com/jkmagnussen'><span style='color: rgb(46, 46, 46);'>Github </span></a>
+        | <a href='https://jkmagnussen.com'><span style='color: rgb(56, 56, 56);'>Homepage </span></a>
         </footer>
-
+        
         <script>
+            window.addEventListener('load', () => {
+                document.getElementById('removeTripButton').addEventListener('click', () => Client.buttonHandler());
+            });
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -69,3 +64,4 @@
 
     <script type="text/javascript" src="main.js"></script></body>
 </html>
+

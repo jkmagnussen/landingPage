@@ -1,12 +1,18 @@
-function buttonHandler (event) {
-    event.preventDefault()
-    const getLocalHost = 'http://localhost:5000/get-latest';
-    fetch(getLocalHost).then(function (response){
-    return response.json()
-    }).then (function (response){
-        console.log(response)
-        document.getElementById('buttonHandlerResults').innerHTML = JSON.stringify(response);
-    })
-};
+function buttonHandler(event) {
+  document.getElementById('country').textContent = '';
+  document.getElementById('placeName').textContent = '';
+  document.getElementById('LoT').textContent = '';
+  document.getElementById('countdown').textContent = '';
 
-export {buttonHandler}
+  const weatherDiv = document.getElementById('weather');
+  while (weatherDiv.firstChild) {
+    weatherDiv.removeChild(weatherDiv.firstChild);
+  }
+
+  const imageDiv = document.getElementById('image');
+  if (imageDiv.firstChild) {
+    imageDiv.removeChild(imageDiv.firstChild);
+  }
+}
+
+export default buttonHandler;
