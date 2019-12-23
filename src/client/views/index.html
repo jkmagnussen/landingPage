@@ -34,21 +34,23 @@
                     <p><div id="latitude" style = 'color: rgb(180, 178, 30); display: none;'></div></p>
                     <p><div id="longitude" style = 'color: rgb(180, 178, 30); display: none;'></div></p>
                     <p>Country Code:<div id="country" style = 'color: rgb(180, 178, 30)'></div></p>
-                    <p>Place Name:<div id="placeName" style = 'color: rgb(180, 178, 30)'></div></p>
+                    <p style = "display: none;"><div id="placeName" style = "display: none;"></div></p>
                     <p>Countdown:<div id="countdown" style = 'color: rgb(180, 178, 30)'></div></p>
                     <p>Length of Trip:<div id="LoT" style = 'color: rgb(180, 178, 30)'></div></p>
-                    <p>Prospective Weather:<ul id="weather" style = 'color: rgb(180, 178, 30); line-height: 50px; text-align: justify'></ul></p>
-                    <p>Image:<div id="image" style = 'color: rgb(180, 178, 30); line-height: 50px; text-align: justify'></div></p>
+                    <p>Prospective Weather:<br><ul id="weather" style = 'color: rgb(180, 178, 30); line-height: 50px; text-align: justify'></ul></p><br>
+                    <p style = "display: none;"><div id="image" class = "picz"></div></pstyle = "display: none;">
             </section>
+            <br>
+            <br>
+
+            <footer role="contentinfo">
+                <pstyle='color: rgb(56, 56, 56); >Copyright © 2019, JKMagnussen. All Rights Reserved | </p>
+            <a href='http://www.linkedin.com/in/joseph-magnussen-478827189'><span style='color: rgb(32, 32, 32);'>LinkedIn</span></a> 
+            | <a href='https://github.com/jkmagnussen'><span style='color: rgb(46, 46, 46);'>Github </span></a>
+            | <a href='https://jkmagnussen.com'><span style='color: rgb(56, 56, 56);'>Homepage </span></a>
+            </footer>
         </main>
 
-        <footer role="contentinfo">
-            <pstyle='color: rgb(56, 56, 56); >Copyright © 2019, JKMagnussen. All Rights Reserved | </p>
-        <a href='http://www.linkedin.com/in/joseph-magnussen-478827189'><span style='color: rgb(32, 32, 32);'>LinkedIn</span></a> 
-        | <a href='https://github.com/jkmagnussen'><span style='color: rgb(46, 46, 46);'>Github </span></a>
-        | <a href='https://jkmagnussen.com'><span style='color: rgb(56, 56, 56);'>Homepage </span></a>
-        </footer>
-        
         <script>
             window.addEventListener('load', () => {
                 document.getElementById('removeTripButton').addEventListener('click', () => Client.buttonHandler());

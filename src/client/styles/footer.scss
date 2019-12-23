@@ -1,10 +1,13 @@
 footer {
-    color: rgb(56, 56, 56);
-    padding: 10px;
-    font-size: 26px;
-    font-family: Sans-Serif;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    height: 4px;
-    position: relative;
+  width: 100%;
+  height: 6%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 25px;
+  border-top: 28px;
 }
