@@ -44,9 +44,11 @@ const handleDarkSky = (time, daySinceStart) => {
   const lng = document.getElementById('longitude').textContent;
 
   _fetchDarkSky(lat, lng, time).then(response => {
-    const temperatureHighAndLowText = `Day ${daySinceStart + 1}: ${
+    const temperatureHighAndLowText = `Day ${daySinceStart + 1}: Highs of ${
       response.temperatureHigh
-    }\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ ${response.icon}. `;
+    }\u00B0\F ↑ Lows of ${response.temperatureLow}\u00B0\F ↓ & ${
+      response.icon
+    }. `;
     // const childText = document.createTextNode(`Day ${daySinceStart +1 }: ${response.temperatureHigh}\u00B0 ↑ ${response.temperatureLow}\u00B0 ↓ ${response.icon}. `);
     const child = document.createElement('li');
 
