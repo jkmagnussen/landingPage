@@ -64,11 +64,13 @@ div {
   font-size: 18px;
   border-radius: 10px 10px 10px 10px;
   border: none;
+  outline: none;
 }
 #input2 {
   font-size: 18px;
   border-radius: 10px 10px 10px 10px;
   border: none;
+  outline: none;
 }
 
 input::-webkit-inner-spin-button {
@@ -80,6 +82,7 @@ input::-webkit-inner-spin-button {
   font-size: 18px;
   border-radius: 10px 10px 10px 10px;
   border: none;
+  outline: none;
 }
 
 h1 {
@@ -89,6 +92,7 @@ h1 {
   font-family: Sans-Serif;
   text-align: center;
 }
+
 a {
   text-decoration: none;
 }
