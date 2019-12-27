@@ -27,7 +27,7 @@ img {
 }
 .button {
   background-color: rgb(59, 109, 76); /* Green */
-  border: solid rgb(225, 226, 149);
+  border: solid 2.5px rgb(154, 209, 168);
   color: rgb(255, 255, 255);
   padding: 10px 32px;
   margin: 20px;
@@ -37,6 +37,7 @@ img {
   display: inline-block;
   font-size: 25px;
   border-radius: 15px 15px 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .section2 {
@@ -95,45 +96,4 @@ h1 {
 
 a {
   text-decoration: none;
-}
-
-#polarity {
-  color: rgb(94, 194, 36);
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-}
-
-#polarity_confidence {
-  color: rgb(94, 194, 36);
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-}
-
-#subjectivity {
-  color: rgb(94, 194, 36);
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-}
-
-#subjectivity_confidence {
-  color: rgb(94, 194, 36);
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: left;
-}
-
-#excerpt {
-  color: rgb(94, 194, 36);
-  padding: 10px;
-  font-size: 24px;
-  line-height: 35px;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: justify;
 }
