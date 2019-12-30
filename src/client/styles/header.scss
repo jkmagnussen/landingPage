@@ -1,9 +1,57 @@
+.top {
+  color: rgb(255, 255, 255);
+  font-size: 90px;
+  font-family: Sans-Serif;
+  display: flex;
+  background-image: url(/src/client/styles/Laptop.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  text-shadow: 0px 5px 10px #000;
+}
+
+.button1 {
+  background-color: transparent; /* Green */
+  border: solid 2.5px rgba(211, 255, 197, 0.76);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 70px;
+  width: 130px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.quals {
+  font-size: 60px;
+  line-height: 100px;
+  padding-left: 30px;
+  padding-top: 10px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+header {
+  text-align: left;
+  flex-direction: column;
+}
+
 h1 {
-    color: rgb(49, 48, 48);
-    font-size: 90px;
-    font-family: Sans-Serif;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    padding: 30px;
+  padding-left: 30px;
+  padding-top: 450px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h2 {
+  font-size: 70px;
+  line-height: 100px;
+  padding-left: 30px;
+  padding-top: 3px;
+  color: rgb(255, 255, 255);
 }

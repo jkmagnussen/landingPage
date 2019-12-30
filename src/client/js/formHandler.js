@@ -101,4 +101,23 @@ const formHandler = event => {
   });
 };
 
+let sections = document.querySelectorAll('section');
+var navbar = document.querySelector('#navbar__list');
+
+const dynamicNav = () => {
+  // incrimentally traverse through sections
+  for (let i = 0; i < sections.length; i++) {
+    const encap = sections[i].querySelector('h3').textContent;
+    var itemAdd = document.createElement('li');
+    var a_tag = document.createElement('a');
+    a_tag.href = '#' + sections[i].id;
+    a_tag.className = encap;
+    a_tag.textContent = encap;
+    itemAdd.appendChild(a_tag);
+    navbar.appendChild(itemAdd);
+    console.log(itemAdd);
+  }
+};
+dynamicNav();
+
 export default formHandler;
