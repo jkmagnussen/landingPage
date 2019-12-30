@@ -15,7 +15,7 @@
             <button class = "button1" onClick = "Client.formHandler()" type="button" style=" outline: 0 none;">More info</button> 
         </header>
 <br>
-<nav class="navbar__menu">
+<nav class="navbar__menu" STYLE = "z-index:2;">
     <!-- Navigation starts as empty UL that will be populated with JS -->
     <ul id="navbar__list"></ul>
 </nav>  
@@ -36,7 +36,6 @@
                     <div class = 'python' style ="color: rgb(80, 79, 138);"><span style ="font-weight: bold; color: rgb(62, 71, 145);">P</span><span style ="font-weight: bold; color: rgb(62, 71, 145);">y</span>thon</div>
                 </div>
         </section>
-
         <section id="section2" data-nav="Section 2">
                 <h3>Portfolio</h3>
         </section>
@@ -47,7 +46,7 @@
                     <input name ='name' type ='text' class ='form-control' placeholder="Your Name" required>
                     <input name ='email' type ='email' class ='form-control' placeholder="Your Email" required>
                     <textarea name = 'message' class = 'form-control' placeholder='Message' rows='10' required></textarea>
-                    <input type='submit' class='form-control submit' value='SEND MESSAGE'>
+                    <button class = "button2" onClick = "Client.formHandler()" type="button" style=" outline: 0 none;">Submit</button>
                   </form>
         </section>
 

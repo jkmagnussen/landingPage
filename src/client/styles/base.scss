@@ -1,6 +1,7 @@
 main {
   position: relative;
   width: 100%;
+  padding: 0px;
 }
 
 .navbar__menu ul {
@@ -39,7 +40,8 @@ h3 {
 }
 
 .bio {
-  line-height: 65px;
+  line-height: 60px;
+  font-size: 30px;
 }
 .html {
   background-color: rgb(179, 79, 32);
@@ -86,14 +88,13 @@ h3 {
   text-decoration: none;
   padding: 10px;
   padding-left: 40px;
-  padding-right: 20px;
   font-size: 40px;
   font-family: Sans-Serif;
   color: white;
 }
 
 a {
-  color: #32d6d6;
+  color: #89ffff;
   text-decoration: none;
   text-shadow: 0px 5px 10px #000;
 }
@@ -155,6 +156,7 @@ li {
   padding-top: 10px;
   font-family: Sans-Serif;
   border: transparent;
+  margin-top: 0px;
 }
 
 div {
@@ -212,7 +214,24 @@ form.submit {
   text-align: left;
   font-weight: 100;
   font-size: 60px;
+  margin-top: 0px;
   padding-left: 60px;
   padding-bottom: 60px;
   font-family: Sans-Serif;
+}
+
+.button2 {
+  background-color: rgba(80, 165, 55, 0.76); /* Green */
+  border: solid 2.5px rgba(90, 255, 44, 0.76);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 70px;
+  width: 130px;
+  margin-left: 400px;
+  margin-bottom: 50px;
 }
