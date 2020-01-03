@@ -13,15 +13,17 @@
 }
 
 h1 {
+  padding-top: 300px;
   padding-right: 400px;
   padding-bottom: 0;
-  margin: auto;
+  margin: 0;
   text-align: left;
   color: rgb(255, 255, 255);
   text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .quals {
+  padding-top: 0px;
   width: 100%;
   padding-right: 300px;
   font-size: 60px;
@@ -56,6 +58,7 @@ header {
 }
 
 h2 {
+  padding-top: 600px;
   font-size: 70px;
   line-height: 100px;
   padding-left: 30px;
