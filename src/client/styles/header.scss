@@ -1,5 +1,4 @@
 .top {
-  color: rgb(255, 255, 255);
   font-size: 90px;
   font-family: Sans-Serif;
   display: flex;
@@ -14,30 +13,38 @@
 
 h1 {
   padding-top: 300px;
-  padding-right: 400px;
+  padding-right: 300px;
+  padding-left: 30px;
   padding-bottom: 0;
   margin: 0;
   text-align: left;
-  color: rgb(255, 255, 255);
+  color: rgb(235, 235, 235);
   text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .quals {
-  padding-top: 0px;
+  padding-left: 30px;
   width: 100%;
   padding-right: 300px;
   font-size: 60px;
   padding-bottom: 0;
-  margin: auto;
-  margin-top: 0px;
-  color: rgb(255, 255, 255);
+  margin-top: 30px;
+  color: rgb(235, 235, 235);
   text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+h2 {
+  font-size: 70px;
+  line-height: 100px;
+  padding-left: 30px;
+  margin-top: 30px;
+  color: rgb(235, 235, 235);
 }
 
 .button1 {
   background-color: transparent; /* Green */
   border: solid 2.5px rgba(211, 255, 197, 0.76);
-  color: rgb(255, 255, 255);
+  color: rgb(235, 235, 235);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -51,17 +58,9 @@ h1 {
 }
 
 header {
-  padding-right: 400px;
+  text-align: left;
   line-height: 60px;
   margin: auto;
   flex-direction: column;
-}
-
-h2 {
-  padding-top: 600px;
-  font-size: 70px;
-  line-height: 100px;
-  padding-left: 30px;
-  padding-top: 3px;
-  color: rgb(255, 255, 255);
+  color: rgb(235, 235, 235);
 }
