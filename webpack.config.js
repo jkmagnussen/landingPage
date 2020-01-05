@@ -21,6 +21,11 @@ module.exports = {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(png|jpg)$/,
+        include: path.join(__dirname, 'img'),
+        loader: 'url-loader?limit=20000',
+      },
     ],
   },
   plugins: [
