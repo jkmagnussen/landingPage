@@ -150,64 +150,19 @@ li {
 }
 
 .porcon {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .Travel4Warn {
-  background-image: url('/src/client/views/Travel4Warn.png');
-  background-repeat: no-repeat;
-  height: 470px;
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  float: left;
-  background-color: transparent;
-  margin-bottom: 85px;
-}
-
-.Travel4Warntxt {
-  margin-top: 470px;
-  font-size: 40px;
-  color: gray;
-}
-
-.Ph {
-  background-image: url('/src/client/views/Ph.png');
-  background-repeat: no-repeat;
-  height: 460px;
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  float: right;
-  background-color: transparent;
-}
-
-.Ph1 {
-  background-image: url('/src/client/views/Ph.png');
-  background-repeat: no-repeat;
-  height: 460px;
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  float: right;
-  width: 50%;
-}
-
-.Ph2 {
-  background-image: url('/src/client/views/Ph.png');
-  background-repeat: no-repeat;
-  height: 460px;
-  width: 500px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  float: left;
-  width: 50%;
+  border-radius: 25px;
+  width: 400px;
+  height: 600px;
+  margin: 10px;
+  position: left;
+  margin-bottom: 35px;
 }
 
 #section3 {
