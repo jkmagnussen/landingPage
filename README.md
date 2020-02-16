@@ -1,6 +1,6 @@
 # Webpack Express App Project
 
-JKMagnussen - Landing page template
+Landing Page Template
 
 This is a project that excercised my ability to navigate through the module bundler, 'Webpack'. The result of which is a weather app and express/ node.js driven application. This excercise application utilises 3 API's, dependant upon one another.
 
