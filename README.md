@@ -1,6 +1,6 @@
 # Webpack Express App Project
 
-JKMagnussen - Udacity Front End Dev final project (Weather App)
+JKMagnussen - Landing page template
 
 This is a project that excercised my ability to navigate through the module bundler, 'Webpack'. The result of which is a weather app and express/ node.js driven application. This excercise application utilises 3 API's, dependant upon one another.
 

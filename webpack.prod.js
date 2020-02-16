@@ -10,6 +10,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(gif|png|jpg|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/dist',
+              publicPath: '/dist',
+            },
+          },
+        ],
+      },
+      {
         test: '/.js$/',
         exclude: /node_modules/,
         loader: 'babel-loader',
